@@ -1,0 +1,22 @@
+## sets starting and end dates for data we pull
+import datetime as dt
+
+##lets us use charts, graphs, things like that
+import matplotlib.pyplot as plt
+from matplotlib import style
+
+import pandas as pd
+import pandas_datareader.data as web
+style.use ('ggplot')
+
+## put in date range of data you want here
+start = dt.datetime(2000,1,1)
+end = dt.datetime(2018,12,31)
+
+## df stands for datafram which is pretty much a spreadsheet, put in stock ticker where "TSLA" is
+df = web.DataReader('TSLA','yahoo', start, end)
+
+## df.head by default prints first five rows in dataframe, I've put 6 to make it the first 6 rows
+print (df.head(6))
+
+## df.tail would show last 6 rows

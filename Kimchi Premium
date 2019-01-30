@@ -1,0 +1,12 @@
+import requests
+## api url for blockchain.info's bitcoin prices
+s = requests.get('https://blockchain.info/ticker')
+##returns dictionary, sets type to float then finds USD and Korean prices for BTC
+usd = float((s.json()['USD']['last']))
+## this rougly converts KRW to USD, obviously not perfect yet
+korea = float((s.json()['KRW']['last'])*.00089)
+##shows prices
+print (usd)
+print (korea)
+##calculates % difference between the two
+print((usd - korea)/korea)

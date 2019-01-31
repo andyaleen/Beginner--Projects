@@ -1,0 +1,20 @@
+## Part two of 'Pull Stock Price'
+## sets starting and end dates for data we pull
+import datetime as dt
+##lets us use charts, graphs, things like that
+import matplotlib.pyplot as plt
+from matplotlib import style
+import pandas as pd
+import pandas_datareader.data as web
+
+style.use ('ggplot')
+
+##start = dt.datetime(2000,1,1)
+##end = dt.datetime(2018,12,31)
+## df stands for datafram which is pretty much a spreadsheet
+##df = web.DataReader('TSLA','yahoo', start, end)
+##df.to_csv('tsla.csv')
+df = pd.read_csv('tsla.csv',parse_dates=True, index_col=0)
+##to focus on one attribute of the graph legend, put df['Adj Close(or whatever)'].plot()
+df.plot()
+plt.show()

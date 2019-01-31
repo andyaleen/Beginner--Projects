@@ -1,4 +1,4 @@
-## Part two of 'Pull Stock Price'
+## Part two of '2. Retrieve stock prices'
 ## sets starting and end dates for data we pull
 import datetime as dt
 ##lets us use charts, graphs, things like that
